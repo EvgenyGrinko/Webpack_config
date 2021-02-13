@@ -1,6 +1,6 @@
-**npx webpack** - to run webpack manually<br/>
+**npx webpack** - to run Webpack manually<br/>
 
-`webpack-cli`- enables to use webpack commands from the terminal
+`webpack-cli`- enables to use Webpack commands from the terminal
 
 # Plugins
 
@@ -11,7 +11,7 @@
 
 # Loaders
 
-__loader__ - allows webpack to work with different file types (besides `.js` and `.json`), e.g. `.css`
+__loader__ - allows Webpack to work with different file types (besides `.js` and `.json`), e.g. `.css`
 
-`css-loader` - allows webpack to understand import of `.css` files.<br/>
-`style-loader` - allows webpack to import styles to the header section of the `import.html`
+`css-loader` - allows Webpack to understand import of `.css` files.<br/>
+`style-loader` - allows Webpack to import styles to the header section of the `import.html`
