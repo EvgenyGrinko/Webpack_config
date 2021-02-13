@@ -1,0 +1,9 @@
+.wrapper {
+    max-width: 1000px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
