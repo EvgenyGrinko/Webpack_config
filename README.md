@@ -14,4 +14,5 @@
 __loader__ - allows Webpack to work with different file types (besides `.js` and `.json`), e.g. `.css`
 
 `css-loader` - allows Webpack to understand import of `.css` files.<br/>
-`style-loader` - allows Webpack to import styles to the header section of the `import.html`
+`style-loader` - allows Webpack to import styles to the header section of the `import.html`<br/>
+`file-loader` - DEPRECATED since v5 - allows to use in the app files with different extensions 

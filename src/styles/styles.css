@@ -1,9 +1,17 @@
 .wrapper {
-    max-width: 1000px;
-    padding: 20px;
-    margin: 0 auto;
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
+}
+
+.logo {
+  background-image: url("../assets/logo.png");
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
 }

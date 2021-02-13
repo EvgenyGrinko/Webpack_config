@@ -23,6 +23,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']//wepack reads from right to left. The order of loaders matters! "css-loader" will be used first.
+            },
+            {
+                test: /\.(png|jpeg|svg|gif)$/,
+                use: ['file-loader']
             }
         ]
     }
