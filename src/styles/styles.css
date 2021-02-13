@@ -1,8 +1,10 @@
+@import "~normalize.css";/*tilda '~' tells Webpack, that this file should be imported from node-modules*/
 @import "./roboto.css";
 
 body {
     font-family: 'Roboto', sans-serif;
 }
+
 .wrapper {
   max-width: 1000px;
   padding: 20px;
