@@ -1,6 +1,6 @@
 import Post from './Post';
 import './styles/styles.css';
-import json from './assets/json.json';
+import json from './assets/json';
 
 const post = new Post('Test title');
 
