@@ -13,7 +13,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        extensions: ['.js', '.json', '.png'],
+        extensions: ['.js', '.json', '.png'],//the order of extensions matters: Webpack can resolve files with equal names but different extensions in this order
+        alias: {
+            '@models': path.resolve(__dirname, 'src/models'),
+            '@': path.resolve(__dirname, 'src'),
+        }
     },
     plugins: [
         new HTMLWebpackPlugin({
