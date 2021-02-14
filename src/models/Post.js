@@ -11,7 +11,7 @@ export default class Post {
             title: this.title,
             date: this.date.toJSON(),
             logo
-        })
+        }, null, '  ')
     }
 
 }
