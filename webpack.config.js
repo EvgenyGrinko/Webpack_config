@@ -3,6 +3,8 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const miniCSSExtractPlugin = require('mini-css-extract-plugin');
+
+const isProd = process.env.NODE_ENV === 'production';
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
@@ -31,7 +33,10 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: './index.html'
+            template: './index.html',
+            minify: {
+                collapseWhitespace: isProd
+            }
         }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin({
