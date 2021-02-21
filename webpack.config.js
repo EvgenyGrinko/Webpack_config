@@ -2,6 +2,7 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const miniCSSExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
@@ -45,13 +46,24 @@ module.exports = {
 
             ]
         }
-        )
+        ),
+        new miniCSSExtractPlugin({
+            filename: '[name].[contenthash].css'
+        })
     ],
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']//wepack reads from right to left. The order of loaders matters! "css-loader" will be used first.
+                use: [
+                    {
+                        loader: miniCSSExtractPlugin.loader,
+                        options: {
+                            publicPath: path.resolve(__dirname, 'dist')
+                        }
+                    }, 
+                    'css-loader'
+                ]//wepack reads from right to left. The order of loaders matters! "css-loader" will be used first.
             },
             {
                 test: /\.(png|jpeg|svg|gif)$/,
