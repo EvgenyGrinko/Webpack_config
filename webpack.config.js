@@ -15,11 +15,14 @@ const optimization = () => {
     };
     if (isProd) {
         config.minimizer = [
-            new TerserWebpackPlugin(), 
+            new TerserWebpackPlugin(),
             new OptimizeCSSAssetsWebpackPlugin()
         ]
     }
     return config;
+}
+const fileName = (ext) => {
+    return isProd ? `[name].[contenthash].${ext}` : `[name].${ext}`
 }
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -29,7 +32,7 @@ module.exports = {
         analytics: './analytics.js'
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: fileName('js'),
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
@@ -65,7 +68,7 @@ module.exports = {
         }
         ),
         new miniCSSExtractPlugin({
-            filename: '[name].[contenthash].css'
+            filename: fileName('css'),
         })
     ],
     module: {
@@ -78,7 +81,7 @@ module.exports = {
                         options: {
                             publicPath: path.resolve(__dirname, 'dist')
                         }
-                    }, 
+                    },
                     'css-loader'
                 ]//wepack reads from right to left. The order of loaders matters! "css-loader" will be used first.
             },
