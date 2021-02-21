@@ -24,6 +24,21 @@ const optimization = () => {
 const fileName = (ext) => {
     return isProd ? `[name].[contenthash].${ext}` : `[name].${ext}`
 }
+const cssLoaders = (extra) => {
+    //Webpack reads from right to left. The order of loaders matters! First in - last out: the last element in the array will be read first.
+    const loaders = [
+        {
+            loader: miniCSSExtractPlugin.loader,
+            options: {
+                publicPath: path.resolve(__dirname, 'dist')
+            }
+        },
+        'css-loader'
+    ]
+    if (extra) loaders.push(extra);
+    return loaders;
+}
+
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
@@ -75,28 +90,11 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: miniCSSExtractPlugin.loader,
-                        options: {
-                            publicPath: path.resolve(__dirname, 'dist')
-                        }
-                    },
-                    'css-loader'
-                ]//wepack reads from right to left. The order of loaders matters! "css-loader" will be used first.
+                use: cssLoaders()
             },
             {
                 test: /\.s[ac]ss$/,
-                use: [
-                    {
-                        loader: miniCSSExtractPlugin.loader,
-                        options: {
-                            publicPath: path.resolve(__dirname, 'dist')
-                        }
-                    },
-                    'css-loader',
-                    'sass-loader'
-                ]
+                use: cssLoaders('sass-loader')
             },
             {
                 test: /\.(png|jpeg|svg|gif)$/,
