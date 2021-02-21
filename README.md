@@ -9,7 +9,9 @@
 `html-webpack-plugin` - for automatic import of the index.html file with scripts.</br>
 `clean-webpack-plugin` - to clean up automatically the 'dist' folder after builds.<br/>
 `copy-webpack-plugin` - to copy static files (like favicon) or entire folders to the build directory.<br/>
-`mini-css-extract-plugin` - to create a separate file for all css (without "style" section in the head)
+`mini-css-extract-plugin` - to create a separate file for all css (without "style" section in the head).<br/>
+`terser-webpack-plugin` - to minify JS code.<br/>
+`optimize-css-assets-webpack-plugin` - to optimize and minimize CSS assets.<br/>
 
 # Loaders
 
