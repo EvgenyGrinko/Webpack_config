@@ -86,6 +86,19 @@ module.exports = {
                 ]//wepack reads from right to left. The order of loaders matters! "css-loader" will be used first.
             },
             {
+                test: /\.s[ac]ss$/,
+                use: [
+                    {
+                        loader: miniCSSExtractPlugin.loader,
+                        options: {
+                            publicPath: path.resolve(__dirname, 'dist')
+                        }
+                    },
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
                 test: /\.(png|jpeg|svg|gif)$/,
                 type: 'asset/resource'
             },
