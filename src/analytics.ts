@@ -1,6 +1,6 @@
 function createAnalytics() {
-    let counter = 0;
-    let isDestroyed = false;
+    let counter: number = 0;
+    let isDestroyed: boolean = false;
 
     const listener = () => counter++;
 
@@ -12,11 +12,11 @@ function createAnalytics() {
         },
         getClicks() {
             if (isDestroyed) {
-                return 'Analytics is destroyed'
+                return 'Analytics is destroyed';
             }
             return counter;
         }
     }
 }
 
-window.analytics = createAnalytics()
+window['analytics'] = createAnalytics();
