@@ -19,4 +19,11 @@ __loader__ - allows Webpack to work with different file types (besides `.js` and
 
 `css-loader` - allows Webpack to understand import of `.css` files.<br/>
 `style-loader` - allows Webpack to import styles to the header section of the `import.html`<br/>
-`file-loader` - DEPRECATED since v5 - allows to use in the app files with different extensions 
+`file-loader` - DEPRECATED since v5 - allows to use in the app files with different extensions <br/>
+`sass-loader` - allows Webpack to load a Sass/SCSS file and compile it to CSS.<br/>
+`babel-loader` allows transpiling JS files using Babel and Webpack.<br/>
+
+# Babel
+is a JS compiler and used to convert ECMAScript 2015+ code into a backwards compatible version of JS in current and older browsers or environments.
+Like many other compilers it runs in 3 stages: parsing, transforming, and printing. To achive these transformations with Babel, we need to add **`plugins`**.
+Or to use instead of individual plugins **`presets`**. Preset is an array of Babel plugins.
