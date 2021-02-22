@@ -1,0 +1,20 @@
+.wrapper {
+  border: 1px solid grey;
+  padding: 10px;
+  position: relative;
+}
+.text {
+  position: absolute;
+  top: 0;
+  color: rgb(8, 98, 7);
+  animation: textMoving 2s ease infinite alternate;
+}
+
+@keyframes textMoving {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(95%);
+  }
+}
