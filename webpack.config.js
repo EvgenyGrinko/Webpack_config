@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const miniCSSExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 const optimization = () => {
@@ -95,7 +96,8 @@ module.exports = {
         ),
         new miniCSSExtractPlugin({
             filename: fileName('css'),
-        })
+        }),
+        new ESLintPlugin()
     ],
     module: {
         rules: [

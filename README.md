@@ -12,6 +12,7 @@
 `mini-css-extract-plugin` - to create a separate file for all css (without "style" section in the head).<br/>
 `terser-webpack-plugin` - to minify JS code.<br/>
 `optimize-css-assets-webpack-plugin` - to optimize and minimize CSS assets.<br/>
+`eslint-webpack-plugin` - A ESLint plugin for Webpack.<br/>
 
 # Loaders
 
