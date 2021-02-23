@@ -13,6 +13,7 @@
 `terser-webpack-plugin` - to minify JS code.<br/>
 `optimize-css-assets-webpack-plugin` - to optimize and minimize CSS assets.<br/>
 `eslint-webpack-plugin` - A ESLint plugin for Webpack.<br/>
+`webpack-bundle-analyzer` - to visualize size of webpack output files
 
 # Loaders
 
