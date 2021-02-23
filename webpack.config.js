@@ -32,7 +32,7 @@ const cssLoaders = (extra) => {
         {
             loader: miniCSSExtractPlugin.loader,
             options: {
-                publicPath: path.resolve(__dirname, 'dist')
+                publicPath: '',
             }
         },
         'css-loader'
@@ -68,7 +68,6 @@ const plugins = () => {
                     from: path.resolve(__dirname, 'src/favicon.ico'),
                     to: path.resolve(__dirname, 'dist')
                 }
-
             ]
         }
         ),
